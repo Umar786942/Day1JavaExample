@@ -1,0 +1,275 @@
+///  DAY 9 HANDS ON  /////
+
+PROBLEM 1
+package com.day9HoL;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+class Usercode{
+	static double calculateAverage(double sum, int count){		
+		
+		return (double)sum/count;		
+	}
+}
+
+public class Day9Hol1 {
+
+	public static void main(String[] args) {
+		Map<Integer,Double> hm = new HashMap<>();
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		double sum=0;
+		int count=0;
+		System.out.println("enter key value pairs");
+		for(int i=0;i<n;i++) {
+			hm.put(s.nextInt(),s.nextDouble());
+		}
+		Set s1=hm.keySet();
+		Iterator itr=s1.iterator();
+		while(itr.hasNext()) {
+			Integer i =(Integer)itr.next();
+			//System.out.println(i+" "+hm.get(i));
+			if( i % 2 != 0) {
+				sum +=hm.get(i);
+				count++;
+			}
+		}
+		
+		
+		Usercode uc= new Usercode();
+		double avg=uc.calculateAverage(sum,count);
+		System.out.printf("%.2f",avg);
+		
+		
+
+	}
+
+}
+
+
+PROBLEM 2
+package com.day9HoL;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+class UserMain2{
+	static int afterDelete() {
+		int count=0;
+		Map<Integer,String> hm = new HashMap<>();
+		Scanner s=new Scanner(System.in);
+		//enter number of key value pairs
+		int n=s.nextInt();
+		//PUTTING VALUES INTO HASHMAP
+		for(int i=0;i<n;i++) {
+			hm.put(s.nextInt(), s.next());			
+		}
+		//default print
+		System.out.println(hm);
+		Set s1=hm.keySet();
+		Iterator itr=s1.iterator();
+		while(itr.hasNext()) {
+			Integer i=(Integer)itr.next();
+			if(i % 3 == 0) {
+				count++; // count of keys whch are divisible by 3
+			}
+		}
+		return count;
+				
+		
+		
+	}
+}
+
+public class Day9Hol2 {
+
+	public static void main(String[] args) {
+		UserMain2 u= new UserMain2();
+		int c=u.afterDelete();
+		System.out.println(c);
+
+	}
+
+}
+
+
+
+PROBLEM 3
+package com.day9HoL;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Usermain3 {
+	static void getMaxKeyValue(){
+		Map<Integer,String> hm=new HashMap<>();
+		
+		Scanner s= new Scanner(System.in);
+		// enter number of key value pairs
+		int n=s.nextInt();
+		// enter key value pairs
+		for(int i=0;i<n;i++) {
+			hm.put(s.nextInt(),s.next());
+		}
+		int max=Collections.max(hm.keySet());
+		//System.out.println(max);
+		System.out.println(hm.get(max));		
+		
+	}
+}
+
+public class Day9Hol3 {
+
+	public static void main(String[] args) {
+		
+		Usermain3 u = new Usermain3();
+		u.getMaxKeyValue();
+	}
+
+}
+
+
+PROBLEM 4
+package com.day9HoL;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+
+public class Day9Hol4 {
+
+	public static void main(String[] args) {
+		LinkedHashMap<String,String> hm=new LinkedHashMap<>();
+		Scanner s= new Scanner(System.in);
+		System.out.println("enter  number of key valu pairs");
+		int n=s.nextInt();
+		System.out.println("enter details");
+		for(int i=0;i<n;i++) {
+			
+			hm.put(s.next(),s.next());
+		}
+		System.out.println(hm);
+		System.out.println("enter designation");
+	    String user=s.next();
+		
+	    Set s1=hm.keySet();
+	    Iterator itr=s1.iterator();
+	    
+	    while(itr.hasNext()) {
+	    	String str = (String)itr.next();
+	    	String des= hm.get(str);
+	    	if(des.equals(user)) {
+	    		System.out.println(str);
+	    	
+	    	}
+	    }
+
+	}
+
+}
+
+
+
+
+
+/////////    COLLECTIONS   ////////
+
+PROBLEM 1
+package com.collectionsHol;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class CollectionsHoL1 {
+
+	public static void main(String[] args) {
+		List<Integer> matches =new ArrayList<>();
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();   // number of matches
+		//System.out.println("enter each match runs");
+		for(int j=0;j<n;j++) {
+			matches.add(s.nextInt());
+		}
+		int sum=0;
+		for(int j=0;j<n;j++) {
+			sum += matches.get(j);
+		}
+		System.out.println(sum);
+		float avg=(float)sum/n;
+		System.out.println(avg);
+		
+
+	}
+
+}
+
+
+
+PROBLEM 2
+package com.collectionsHol;
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class collections2Hol {
+
+	public static void main(String[] args) {
+		TreeSet<Integer> runs = new TreeSet<>();
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();   // number of matches
+		for(int i=0;i<n;i++) {
+			runs.add(s.nextInt());  // to store each individual match runs
+		}
+		System.out.println();
+		for(int r:runs) {
+			System.out.println(r);
+		}
+
+	}
+
+}
+
+
+PROBLEM 3
+package com.collectionsHol;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class collectionsHol3 {
+
+	public static void main(String[] args) {
+		List<String> names= new ArrayList<>();
+		Scanner s =new Scanner(System.in);
+		int n=s.nextInt(); // number of matches
+		for(int i=0;i<=n;i++) {
+			names.add(s.nextLine()); // store different stadiums
+		}
+		System.out.println("enter venue to fing frequency");
+		String venue=s.nextLine(); // get the venue to check frequency
+		int freq=Collections.frequency(names, venue);
+		System.out.println("count "+freq);
+			
+
+	}
+
+}
+
+
+//////////        THANK YOU       /////////////

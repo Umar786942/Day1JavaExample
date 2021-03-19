@@ -1,0 +1,141 @@
+package com.pack;
+
+import java.util.Iterator;
+
+class Digit {
+
+    public static void main(String[] args) {
+    						// Problem1 
+                                 int x = 1;
+
+                                 while (x < 10) {
+
+                            if (x > 3) {
+
+                                 System.out.println("big x");
+
+                           }
+                            x++;
+                      } System.out.println();
+                                 
+                      
+                      /// Problem 2
+                                 x = 5;
+
+                                 while (x > 1) {
+
+                                     
+                                	 // prints upto max datatype 2^31 and
+                                	 // -2^31 - 2 ^ 31 = small(1 or 2) 
+                                	 // x < 3 so it gives small x
+                                	 x = x + 1;
+                                     if (x < 3) {
+
+                                          System.out.println("small x");
+
+                                     }
+
+                                 }System.out.println();
+                            
+                                 
+                                 // Problem 3     
+                                 x = 5;
+
+                                 while (x  > 1) {
+
+                                       x = x - 1;
+
+                            if (x < 3) {
+
+                                  System.out.println("small x");
+
+                            }
+
+                       }System.out.println();
+                                 // Problem 4
+                                 x = 5;
+
+                                 while (x  > 1) {
+
+                                       x = x - 1;
+
+                            if (x < 3) {
+
+                                  System.out.println("small x");
+
+                            }
+
+                       }
+               System.out.println();  
+               
+       // Problem 4
+       System.out.println("Hello World!\nIt's been nice knowing you.\nGoodbye World!");
+               System.out.println();
+      // Problem 5 Patterns
+      for(int i = 1; i <= 5; i++) {
+    	   for(int j = 1; j <= 5; j++) {
+    		   System.out.print("*");
+    	   }
+    	   System.out.println();
+       }System.out.println();
+       
+       // Problem 6 Patterns
+       for(int i = 1; i <= 4; i++) {
+    	   for(int j = 1; j <= 4-i; j++) {
+    		   System.out.print(" ");
+    	   }
+    	   for(int j = 1; j <= i; j++) {
+    		   
+    		   System.out.print("* ");
+    	   }
+    	   System.out.println();
+       }System.out.println();
+           
+// Problem 7
+    	                    String name = "Rank";
+
+    	                    /* Now let's say hello */ // hello + name
+
+    	                   System.out.println("Hello "+name);
+
+    	System.out.println();
+    	 
+// Problem 8
+    	                    int i;   
+
+    	                    System.out.print("Hello ");       // Say Hello
+
+    	               i = 0;                               // Initialize loop counter
+
+    	                       while (i <= args.length-1) {    // Test and Loop
+
+    	                    System.out.print(args[i] + " "); 
+
+    	                     i = i + 1;                     // Increment Loop Counter
+
+    	                     }
+
+    	                        System.out.println();             // Finish the line
+
+    	 // radius = 2.0 area = 3.14 * 2.0 * 2.0 = 12.56
+// Problem 9    	                        
+    	String inch = args[0];
+    	int numOfInches = Integer.parseInt(inch);
+    	System.out.println(inch+" Inches = " + numOfInches * 2.54 + " Centimeters");
+    	
+    	System.out.println();
+    	
+    	int numberOfHoursWorked = Integer.parseInt(args[0]);
+    	int basePayRate = Integer.parseInt(args[1]);
+    	int totalPayDue = numberOfHoursWorked/basePayRate;
+    	// accessor methods -> setter methods // mutator methods -> getter methods
+    	
+    	System.out.println(totalPayDue);
+    	i = 42;
+
+ // Problem 10
+        String s = (i<40)?"life":(i>50)?"universe":"everything";
+
+        System.out.println(s);
+    }
+}
