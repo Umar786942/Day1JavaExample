@@ -1,0 +1,331 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use mysqlhandson;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_mysqlhandson |
++------------------------+
+| books                  |
+| customer               |
+| programmer             |
++------------------------+
+3 rows in set (0.15 sec)
+
+
+
+
+mysql>( EmpNo numeric(5) not null, ProjId numeric(5) not null,
+ LastName varchar(30) , FirstName varchar(30),
+  HireDate DATE, Language varchar(15),
+  TaskNo numeric(2), Privilege varchar(25));
+mysql> INSERT  INTO  PROGRAMMER              VALUES(201,'Gupta','Saurav','01/01/95','NPR','VB',52,'Secret');
+INSERT  INTO  PROGRAMMER VALUES(390,'Ghosh','Pinky','01/05/93','KCW','Java',11,'Top Secret');
+INSERT  INTO  PROGRAMMER VALUES(789,'Agarwal','Praveen','08/31/98','VB','RNC',11,'Secret');
+INSERT  INTO  PROGRAMMER VALUES(134,'Chaudhury','Supriyo','07/15/95','TIPPS','C++',52,'Secret');
+INSERT  INTO  PROGRAMMER VALUES(896,'Jha','Ranjit','06/15/97','KCW','Java',10,'Top Secret');
+INSERT  INTO  PROGRAMMER VALUES(345,'John','Peter','11/15/99','KCW','Java',52,null);
+
+
+
+mysql> SELECT * FROM PROGRAMMER;
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+| EmpNo | ProjID | LastName | FirstName | HireDate   | Language | TaskNo | privilege    |
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+|   201 | NITTS  | guptha   | saurav    | 1995-01-01 | C++      |     52 | Secret       |
+|   390 | KCW    | Ghosh    | pinky     | 1993-01-05 | Java     |     11 | Top Secret   |
+|   789 | rnc    | Agarwal  | Praveen   | 1998-08-31 | VB       |     11 | Secret       |
+|   896 | KCW    | JHA      | RANJIT    | 1997-06-15 | JAVA     |     10 | TOP Secret   |
+|   345 | TIPPS  | JOHN     | PETER     | 1999-11-15 | JAVA     |     52 | NULL         |
+|   563 | NITTS  | ANDERSON | ANDY      | 1994-08-15 | C++      |     89 | CONFIDENTIAL |
++-------+--------+----------+-----------+------------+----------+--------+--------------+
+6 rows in set (0.08 sec)
+
+
+mysql> SELECT * FROM BOOKS;
++--------+-------+---------+---------------------+----------------------+-------+---------------+---------+
+| BOOKID | TITLE | TOPICID | PUBLISHER_NAME      | PLACE_OF_PUBLICATION | PRICE | PURCHASE_DATE | SHELFNO |
++--------+-------+---------+---------------------+----------------------+-------+---------------+---------+
+|   3433 | OOPS  | OOPS1   | DAVE PUBLICATIONS   | PUNE                 |   600 | 1999-11-15    | S56     |
+|   4576 | JAVA  | JAVA1   | GURU GOVIND         | DELHI                |   500 | 1997-06-15    | S87     |
+|   4655 | SAD   | SAD1    | SANJAN PUBLICATIONS | COCHIN               |   700 | 1994-08-15    | S76     |
+|   5645 | DBMS  | DB1     | PEARSON EDUCATION   | MUMBAI               |   655 | 1993-01-05    | S10     |
+|   6565 | C     | C1      | TMH                 | MUMBAI               |   840 | 1998-08-31    | S66     |
+|   6567 | C++   | CPLUS1  | ABC PUBLISHERS      | DELHI                |   300 | 1995-07-15    | S77     |
+|   8293 | DBMS  | DB1     | PRENTICE HALL       | MUMBAI               |   255 | 1995-01-01    | S10     |
++--------+-------+---------+---------------------+----------------------+-------+---------------+---------+
+7 rows in set (0.05 sec)
+
+
+
+
+//////////////       SECOND HALF     /////////////
+
+
+
+mysql> CREATE TABLE CUSTOMER ( CUSTID NUMERIC(5) PRIMARY KEY, FNAME VARCHAR(30), LNAME VARCHAR(30),ADDRESS VARCHAR(50),
+PHONENO NUMERIC(11) NOT NULL,CITY VARCHAR(20),COUNTRY VARCHAR(20),DATE_FIRST_PURCHASED DATE, SUPPLIERID NUMERIC(1));
+
+mysql> SELECT * FROM CUSTOMER;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1001,'DAS','JEYASEELAN','119,PARK AVENUE,II STREET',9841093428,'COIMBATORE','INDIA','2014/1/10',1);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (2001,'GOPI','GOVINDRAJ','241, I FLOOR,KAMARAJ STREET, MADIPPAKKAM',9444124590,'CHENNAI','INDIA','2005/3/25',4);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1201,'DILIP','KISHORE','43,II AVENUE,ANNA NAGAR',9997234534,'BANGALORE','INDIA','2004/8/20',2);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1300,'AANAND','CHOUDHARY','42/1 SECTOR 1, II STREET',9841054348,'BANGALORE','INDIA','2005/5/15',2);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1220,'CHANDRA','NAGARAJAN','83,LAL BAGH',9841067236,'BANGALORE','INDIA','2006/2/12',4);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1221,'ABHISHEK','KUMAR','13,KISHORI PARK',9337326890,'CHENNAI','INDIA','2004/5/15',1);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1320,'NIKHIL','PANDIT','218,ALWANYA STREET',9448923091,'SALEM','INDIA','2006/4/21',3);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1222,'MEENU','MONICA','C11,CHURCH ROAD',98410563421,'Trichy','India','2004/8/30',1);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO CUSTOMER(CUSTID,FNAME,LNAME,ADDRESS,PHONENO,CITY,COUNTRY,DATE_FIRST_PURCHASED,SUPPLIERID) VALUES (1225,'PAVAN','KUMAR','128/A, North Mada Street',99934782103,'maduari','INDIA','2004/8/4',4);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> SELECT * FROM CUSTOMER;
++--------+----------+------------+------------------------------------------+-------------+------------+---------+----------------------+------------+
+| CUSTID | FNAME    | LNAME      | ADDRESS                                  | PHONENO     | CITY       | COUNTRY | DATE_FIRST_PURCHASED | SUPPLIERID |
++--------+----------+------------+------------------------------------------+-------------+------------+---------+----------------------+------------+
+|   1001 | DAS      | JEYASEELAN | 119,PARK AVENUE,II STREET                |  9841093428 | COIMBATORE | INDIA   | 2014-01-10           |          1 |
+|   1201 | DILIP    | KISHORE    | 43,II AVENUE,ANNA NAGAR                  |  9997234534 | BANGALORE  | INDIA   | 2004-08-20           |          2 |
+|   1220 | CHANDRA  | NAGARAJAN  | 83,LAL BAGH                              |  9841067236 | BANGALORE  | INDIA   | 2006-02-12           |          4 |
+|   1221 | ABHISHEK | KUMAR      | 13,KISHORI PARK                          |  9337326890 | CHENNAI    | INDIA   | 2004-05-15           |          1 |
+|   1222 | MEENU    | MONICA     | C11,CHURCH ROAD                          | 98410563421 | Trichy     | India   | 2004-08-30           |          1 |
+|   1225 | PAVAN    | KUMAR      | 128/A, North Mada Street                 | 99934782103 | maduari    | INDIA   | 2004-08-04           |          4 |
+|   1300 | AANAND   | CHOUDHARY  | 42/1 SECTOR 1, II STREET                 |  9841054348 | BANGALORE  | INDIA   | 2005-05-15           |          2 |
+|   1320 | NIKHIL   | PANDIT     | 218,ALWANYA STREET                       |  9448923091 | SALEM      | INDIA   | 2006-04-21           |          3 |
+|   2001 | GOPI     | GOVINDRAJ  | 241, I FLOOR,KAMARAJ STREET, MADIPPAKKAM |  9444124590 | CHENNAI    | INDIA   | 2005-03-25           |          4 |
++--------+----------+------------+------------------------------------------+-------------+------------+---------+----------------------+------------+
+9 rows in set (0.03 sec)
+
+
+
+
+
+mysql> CREATE TABLE SUPPLIER (SUPPLIERID NUMERIC(1) PRIMARY KEY, SNAME VARCHAR(20), SCITY VARCHAR(15),SPHONE VARCHAR(11) NOT NULL,EMAIL VARCHAR(20) );
+Query OK, 0 rows affected (1.54 sec)
+
+mysql> INSERT INTO SUPPLIER (SUPPLIERID , SNAME , SCITY,SPHONE,EMAIL) VALUES (1,'DILIP','CHENNAI',9997234534,'DILIP@ABC.CO.IN');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> INSERT INTO SUPPLIER (SUPPLIERID , SNAME , SCITY,SPHONE,EMAIL) VALUES (2,'TARUN','MADURAI',8999991111,'TARUN@XYZ.COM');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO SUPPLIER (SUPPLIERID , SNAME , SCITY,SPHONE,EMAIL) VALUES (3,'NARESH','COIMBATORE',8999992222,'G.NARESH@XYZL.COM');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO SUPPLIER (SUPPLIERID , SNAME , SCITY,SPHONE,EMAIL) VALUES (4,'GANESAN','TRICY',8999993333,'GANESAN@IJK.COM');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> SELECT * FROM SUPPLIER;
++------------+---------+------------+------------+-------------------+
+| SUPPLIERID | SNAME   | SCITY      | SPHONE     | EMAIL             |
++------------+---------+------------+------------+-------------------+
+|          1 | DILIP   | CHENNAI    | 9997234534 | DILIP@ABC.CO.IN   |
+|          2 | TARUN   | MADURAI    | 8999991111 | TARUN@XYZ.COM     |
+|          3 | NARESH  | COIMBATORE | 8999992222 | G.NARESH@XYZL.COM |
+|          4 | GANESAN | TRICY      | 8999993333 | GANESAN@IJK.COM   |
++------------+---------+------------+------------+-------------------+
+4 rows in set (0.00 sec)
+
+
+mysql> ALTER TABLE SUPPLIER ADD UNIQUE(EMAIL);
+Query OK, 0 rows affected (2.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE CUSTOMER ADD CONSTRAINT FK_SUPPLIERID FOREIGN KEY(SUPPLIERID) REFERENCES SUPPLIER(SUPPLIERID);
+Query OK, 9 rows affected (4.07 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+
+mysql> CREATE TABLE ORDERS(ORDERID NUMERIC(1) PRIMARY KEY,ORDERDATE DATE,CUSTID NUMERIC(4),QUANTITY NUMERIC(2),ITEMID NUMERIC(2));
+Query OK, 0 rows affected (1.92 sec)
+
+mysql> INSERT INTO ORDERS VALUES(1,'2004/1/12',1001,30,25);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO ORDERS VALUES(2,'2005/5/6',1202,34,24);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO ORDERS VALUES (3,'2006/12/6',1220,10,22);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO ORDERS VALUES (4,'2004/5/21',1233,12,21);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> SELECT * FROM ORDERS;
++---------+------------+--------+----------+--------+
+| ORDERID | ORDERDATE  | CUSTID | QUANTITY | ITEMID |
++---------+------------+--------+----------+--------+
+|       1 | 2004-01-12 |   1001 |       30 |     25 |
+|       2 | 2005-05-06 |   1202 |       34 |     24 |
+|       3 | 2006-12-06 |   1220 |       10 |     22 |
+|       4 | 2004-05-21 |   1233 |       12 |     21 |
++---------+------------+--------+----------+--------+
+4 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE ITEMS (ITEMID NUMERIC(2) PRIMARY KEY,ITEMNAME VARCHAR(35) NOT NULL,SUPPLIERID NUMERIC(1),MINQTY NUMERIC(2) NOT NULL,MAXQTY NUMERIC(2) NOT NULL,PRICE NUMERIC(5,2));
+Query OK, 0 rows affected (1.72 sec)
+
+mysql> INSERT INTO ITEMS VALUES (20,'Pears Soap',4,7,20,30.00);
+Query OK, 1 row affected (0.32 sec)
+
+mysql> INSERT INTO ITEMS VALUES (21,'V.V.D. Coconut oil 200 ml',2,8,15,79.00);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO ITEMS VALUES (22,'Ponds powder 400g',3,6,25,106.00);
+Query OK, 1 row affected (0.26 sec)
+
+mysql> INSERT INTO ITEMS VALUES (23,'Reynolds pen- blue',1,10,30,15.00);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> INSERT INTO ITEMS VALUES (24,'Reynolds pen- blue',1,10,30,16.00);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO ITEMS VALUES (25,'Mysore sandal soap',4,7,25,25.00);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO ITEMS VALUES (26,'Fair & lovely',3,5,15,55.00);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO ITEMS VALUES (27,'Rexono deo spary',2,5,20,100.00);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> INSERT INTO ITEMS VALUES (28,'Dove soap',4,7,15,85.00);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> SELECT * FROM ITEMS;
++--------+---------------------------+------------+--------+--------+--------+
+| ITEMID | ITEMNAME                  | SUPPLIERID | MINQTY | MAXQTY | PRICE  |
++--------+---------------------------+------------+--------+--------+--------+
+|     20 | Pears Soap                |          4 |      7 |     20 |  30.00 |
+|     21 | V.V.D. Coconut oil 200 ml |          2 |      8 |     15 |  79.00 |
+|     22 | Ponds powder 400g         |          3 |      6 |     25 | 106.00 |
+|     23 | Reynolds pen- blue        |          1 |     10 |     30 |  15.00 |
+|     24 | Reynolds pen- blue        |          1 |     10 |     30 |  16.00 |
+|     25 | Mysore sandal soap        |          4 |      7 |     25 |  25.00 |
+|     26 | Fair & lovely             |          3 |      5 |     15 |  55.00 |
+|     27 | Rexono deo spary          |          2 |      5 |     20 | 100.00 |
+|     28 | Dove soap                 |          4 |      7 |     15 |  85.00 |
++--------+---------------------------+------------+--------+--------+--------+
+9 rows in set (0.00 sec)
+
+mysql> ALTER TABLE ORDERS ADD CONSTRAINT FK_ITEMID FOREIGN KEY(ITEMID) REFERENCES ITEMS(ITEMID);
+Query OK, 4 rows affected (4.75 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+ Q   Display all customers from Chennai.
+
+mysql> SELECT * FROM CUSTOMER WHERE CITY=CHENNAI;
+ERROR 1054 (42S22): Unknown column 'CHENNAI' in 'where clause'
+mysql> SELECT * FROM CUSTOMER WHERE CITY LIKE 'CHENNAI';
++--------+----------+-----------+------------------------------------------+------------+---------+---------+----------------------+------------+
+| CUSTID | FNAME    | LNAME     | ADDRESS                                  | PHONENO    | CITY    | COUNTRY | DATE_FIRST_PURCHASED | SUPPLIERID |
++--------+----------+-----------+------------------------------------------+------------+---------+---------+----------------------+------------+
+|   1221 | ABHISHEK | KUMAR     | 13,KISHORI PARK                          | 9337326890 | CHENNAI | INDIA   | 2004-05-15           |          1 |
+|   2001 | GOPI     | GOVINDRAJ | 241, I FLOOR,KAMARAJ STREET, MADIPPAKKAM | 9444124590 | CHENNAI | INDIA   | 2005-03-25           |          4 |
++--------+----------+-----------+------------------------------------------+------------+---------+---------+----------------------+------------+
+2 rows in set (0.05 sec)
+
+
+Q    Display the details of all customers who purchased from the supplier 2
+
+mysql> SELECT * FROM CUSTOMER WHERE SUPPLIERID=2;
++--------+--------+-----------+--------------------------+------------+-----------+---------+----------------------+------------+
+| CUSTID | FNAME  | LNAME     | ADDRESS                  | PHONENO    | CITY      | COUNTRY | DATE_FIRST_PURCHASED | SUPPLIERID |
++--------+--------+-----------+--------------------------+------------+-----------+---------+----------------------+------------+
+|   1201 | DILIP  | KISHORE   | 43,II AVENUE,ANNA NAGAR  | 9997234534 | BANGALORE | INDIA   | 2004-08-20           |          2 |
+|   1300 | AANAND | CHOUDHARY | 42/1 SECTOR 1, II STREET | 9841054348 | BANGALORE | INDIA   | 2005-05-15           |          2 |
++--------+--------+-----------+--------------------------+------------+-----------+---------+----------------------+------------+
+2 rows in set (0.07 sec)
+
+Q    Display CUSTID, FNAME, LNAME of all customers whose purchase date is after January 2005.
+
+mysql> SELECT CUSTID,FNAME,LNAME FROM CUSTOMER WHERE DATE_FIRST_PURCHASED >'2005/1/1';
++--------+---------+------------+
+| CUSTID | FNAME   | LNAME      |
++--------+---------+------------+
+|   1001 | DAS     | JEYASEELAN |
+|   1220 | CHANDRA | NAGARAJAN  |
+|   1300 | AANAND  | CHOUDHARY  |
+|   1320 | NIKHIL  | PANDIT     |
+|   2001 | GOPI    | GOVINDRAJ  |
++--------+---------+------------+
+5 rows in set (0.05 sec)
+
+Q  Display the details of all suppliers who are from location Coimbatore.
+
+mysql> SELECT * FROM SUPPLIER WHERE SCITY LIKE 'COIMBATORE';
++------------+--------+------------+------------+-------------------+
+| SUPPLIERID | SNAME  | SCITY      | SPHONE     | EMAIL             |
++------------+--------+------------+------------+-------------------+
+|          3 | NARESH | COIMBATORE | 8999992222 | G.NARESH@XYZL.COM |
++------------+--------+------------+------------+-------------------+
+1 row in set (0.03 sec)
+
+
+Q       Display the details of all suppliers whose name stars with G.
+
+mysql> SELECT * FROM SUPPLIER WHERE SNAME LIKE 'G%';
++------------+---------+-------+------------+-----------------+
+| SUPPLIERID | SNAME   | SCITY | SPHONE     | EMAIL           |
++------------+---------+-------+------------+-----------------+
+|          4 | GANESAN | TRICY | 8999993333 | GANESAN@IJK.COM |
++------------+---------+-------+------------+-----------------+
+1 row in set (0.00 sec)
+
+Q     Display the details of all customers, who do not have the alphabet e in their LNAME.
+
+mysql> SELECT * FROM CUSTOMER WHERE LNAME NOT LIKE '%E%';
++--------+----------+-----------+------------------------------------------+-------------+-----------+---------+----------------------+------------+
+| CUSTID | FNAME    | LNAME     | ADDRESS                                  | PHONENO     | CITY      | COUNTRY | DATE_FIRST_PURCHASED | SUPPLIERID |
++--------+----------+-----------+------------------------------------------+-------------+-----------+---------+----------------------+------------+
+|   1220 | CHANDRA  | NAGARAJAN | 83,LAL BAGH                              |  9841067236 | BANGALORE | INDIA   | 2006-02-12           |          4 |
+|   1221 | ABHISHEK | KUMAR     | 13,KISHORI PARK                          |  9337326890 | CHENNAI   | INDIA   | 2004-05-15           |          1 |
+|   1222 | MEENU    | MONICA    | C11,CHURCH ROAD                          | 98410563421 | Trichy    | India   | 2004-08-30           |          1 |
+|   1225 | PAVAN    | KUMAR     | 128/A, North Mada Street                 | 99934782103 | maduari   | INDIA   | 2004-08-04           |          4 |
+|   1300 | AANAND   | CHOUDHARY | 42/1 SECTOR 1, II STREET                 |  9841054348 | BANGALORE | INDIA   | 2005-05-15           |          2 |
+|   1320 | NIKHIL   | PANDIT    | 218,ALWANYA STREET                       |  9448923091 | SALEM     | INDIA   | 2006-04-21           |          3 |
+|   2001 | GOPI     | GOVINDRAJ | 241, I FLOOR,KAMARAJ STREET, MADIPPAKKAM |  9444124590 | CHENNAI   | INDIA   | 2005-03-25           |          4 |
++--------+----------+-----------+------------------------------------------+-------------+-----------+---------+----------------------+------------+
+7 rows in set (0.03 sec)
+
+ Q   Display the details of all the orders where the quantity is less than 35.
+mysql> SELECT * FROM ORDERS WHERE QUANTITY <35;
++---------+------------+--------+----------+--------+
+| ORDERID | ORDERDATE  | CUSTID | QUANTITY | ITEMID |
++---------+------------+--------+----------+--------+
+|       1 | 2004-01-12 |   1001 |       30 |     25 |
+|       2 | 2005-05-06 |   1202 |       34 |     24 |
+|       3 | 2006-12-06 |   1220 |       10 |     22 |
+|       4 | 2004-05-21 |   1233 |       12 |     21 |
++---------+------------+--------+----------+--------+
+4 rows in set (0.00 sec)
+
+
