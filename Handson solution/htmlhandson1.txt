@@ -1,0 +1,342 @@
+1.1 Exercise 
+u<!DOCTYPE html>
+<html>
+   <head>
+      <title> Login </title>
+   </head>
+     <body>
+<center>
+      <form method="post" action="login.html">
+         <table>
+            <tr bgcolor="black">
+               <th colspan="3"><font color="white">Address Book</th>
+            </tr>
+            <tr height="20"></tr>
+            <tr>
+               <td>User Name</td>
+               <td>:</td>
+               <td>
+                  <input type="text" name="username"/>
+               </td>
+            </tr>
+            <tr>
+               <td>Address</td>
+               <td>:</td>
+               <td>
+                  <input type="text" name="Address"/>
+               </td>
+            </tr>
+            <tr height="10"></tr>
+            <tr height="20"></tr>
+            <tr>
+               <td>City</td>
+               <td>:</td>
+               <td>
+                  <input type="textarea" name="city"/>
+               </td>
+            </tr>
+            <tr>
+               <td>PostalCode</td>
+               <td>:</td>
+               <td>
+                 <select>
+   <option>hyderabad</option>
+  <option>banglore</option>
+ <option>chennai</option>
+ <option>pune</option>
+ <option>delhi</option>
+   </select>
+               </td>
+            </tr>
+           <tr>
+               <td>TransportMode</td>
+               <td>:</td>
+                 <td>
+                 <input type="radio" name="transport"/>Cycle:<br>
+<input type="radio" name="transport"/>Bus:<br>
+<input type="radio" name="transport"/>Car:<br>
+<input type="radio" name="transport"/>Lorry:<br>
+<input type="radio" name="transport"/>Others:
+             </td>
+            </tr >
+               <tr>
+               <td>Skillssets</td>
+               <td>:</td>
+               <td>
+        java<input type="checkbox" name="username"/>
+   C<input type="checkbox" name="username"/>
+   Html<input type="checkbox" name="username"/>
+   Css<input type="checkbox" name="username"/>
+   Phython<input type="checkbox" name="username"/>
+   Other<input type="checkbox" name="username"/>
+               </td>
+            </tr>
+ <tr height="20"></tr>
+            <tr>
+               <td>Email</td>
+               <td>:</td>
+               <td><br>
+                  <input type="email" name="email"/>
+               </td>
+            </tr>
+ <tr height="20"></tr>
+            <tr>
+               <td>About Yourself</td>
+                    <td>:</td>
+                <td>
+                  <textarea cols=20 rows=4name="about yourself">
+</textarea>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="submit.html">submit</a><br><br><input type=reset value="reset">
+</td>
+</tr>
+	
+         </table>
+      </form>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+<html>
+   <head>
+      <title> Submit </title>
+   </head>
+     <body>
+<h3>Your Details Are Submitted. <b>Thank You!<b></h3>
+<center>
+</body>
+</center>
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------------
+1.3 Exercise 
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+
+<center>
+<table border>
+<form action="data" method="post">
+<th>REGISTRATION FORM</th>
+<tr>
+<td>User ID:</td>             
+<td>  <input type="text" name="userid"></td>
+</tr>
+<tr>
+<td>First Name:</td>        
+  <td><input type="text" name="firstname"></td>
+</tr>
+<tr>
+<td>Last Name:</td>        
+<td><input type="text" name="lastname"></td>
+</tr>
+<tr>
+<td>Address:</td>             
+<td><textarea id="Enter adress" name="address" rows="4" cols="30">
+	           </textarea><br><br>
+	         <label for="country">Choose a country:</label>
+	        <select name="country" id="country">
+      		<option value="">Select Country</option>
+   		 <option value="india">india</option>
+  		  <option value="afganisthan">afghanistan</option>
+   		 <option value="burma">burma</option>
+  		  <option value="America">America</option>
+  	         </select></td>
+  
+</tr>
+<tr>
+<td>Phone :</td>                
+<td><input type="text" name="userid"></td>
+</tr>
+<tr>
+<td>Zip Code :</td>           
+<td> <input type="text" name="zipcode"></td>
+</tr>
+<tr>
+<td>Gender:</td>	           
+       <td>   <input type="radio" name=gender>  Male
+          <input type="radio" name=gender>  Female</td></td>
+</tr>
+<tr>
+              <td><a href="data.html">submit</a></td>
+
+
+             <td>   <input type="reset" name="reset"></td>
+</tr>
+</form>
+</center>
+</table>
+</body>
+</html>
+
+
+
+
+<html>
+<head>
+</head>
+<body>
+<H4>Your Data have been uploaded</H4>
+</body>
+</html
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.4 Exercise 
+<html>
+	<title>table</title>
+	<body>
+	<table border >
+	<tr><th>Planet Name</th>
+		<th>Year Length</th>
+		<th>Day Length</th>
+	</tr>
+	<tr>
+		<td>Mercury
+		<td>88 days
+		<td>59 days
+	</tr>
+	<tr>
+		<td>Venus
+		<td>225 days
+		<td>243 days
+	</tr>
+	<tr>
+		<td>Earth
+		<td>365 days
+		<td>24 days
+	</tr>
+	<tr>
+		<td>Mars
+		<td>765 days
+		<td>24.6 days
+	</tr>
+	</table></body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.5 Exercise 
+<html><head>
+	<tilte>FormatterTags</title>
+</head>
+<body>
+	<pre>
+	The PRE command uses a present format from a device used
+	to creat a file,especially in cases of a word
+	processor created document.It is an easy way to
+	convert text document to Web documents.Check your
+	code by inserting tag in your document.
+	</pre>
+	<ol type=i>
+		<li>Circle(Default)</li>
+		<li>Square</li>
+		<li>Moon</li>
+	</ol>
+	<ul type=square>
+		<li>One</li>
+		<li>Two</li>
+		<li>Three</li>
+	</ul>
+</body>
+-------------------------------------------------------------------------------------------------------------------------------------------------
+1.7 Exercise 
+<html>
+
+<head>
+<title>Black Goose Bistro</title>
+</head>
+
+<body bgcolor="green">
+<u><h1 align=center>Designing Web Page</h1></u>
+<hr><hr>
+<h1 align=right ><img src="employee.jpg" alt="My Profile" style="width:300px;height:300px;"><br>employee</h1>
+<u><h1>i. A couple of paragraphs of normal text</h1></u>
+<hr>
+<hr>
+Black Goose Bistro
+
+The Restaurant
+The Black Goose Bistro offers casual lunch and dinner fare in a hip atmosphere. The menu changes regularly to highlight the freshest ingredients.
+
+Catering
+You have fun... we'll do the cooking. Black Goose catering can handle events from snacks for bridge club to elegant corporate fundraisers.
+Location and Hours Seekonk, Massachusetts; Monday through Thursday 11am to 9pm, Friday and Saturday, 11am to midnight
+<hr>
+<hr>
+<u><h1>ii. A line with bold formatting</u><br>
+
+<u>iii. A horizontal line which is green in color</u><br>
+
+<u>iv. A colored background</u></h1>
+<hr>
+<u><h1 style="background-color:DodgerBlue;"></u>
+Black Goose Bistro</h1>
+<h2 style="background-color:Yellow;">
+The Restaurant</h2>
+<p style="background-color:gray;">
+The Black Goose Bistro offers casual lunch and
+dinner fare in a hip atmosphere. The menu changes
+regularly to highlight the freshest ingredients.
+</p>
+<p style="background-color:Red;">
+ You have fun... <em>we'll handle the cooking
+</em>. Black Goose Catering can handle events
+from snacks for bridge club to elegant corporate
+fundraisers.</p>
+<hr>
+</body>
+
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.8 Exercise 
+
+
+<label for"About yourself">About yourself:</label><br><br>
+<input type="text" name="n1" value="" size="100"
+maxlength-"200" autocomplete="on" autofocus required
+pattern"[A-Za-z]" placeholder="Write about yourself"><br/><br><br>
+
+<label for="Hobbies">Hobbies:</label>
+ 
+  <br><br>
+
+<ul>
+  <li>Playing chess</li>
+  <li>dancing</li>
+  <li>cooking</li>
+</ul>  
+
+<label for="Subjects that interests">Subjects that interests:</label>
+ 
+  <br><br>
+
+<ul>
+  <li>Maths</li>
+  <li>Science</li>
+  <li>Social</li>
+</ul>  
+
+<a href="google.com">google.com</a><br><br>
+
+<hr style="width:100%;height:15px;text-align:left;margin-left;color-red:0"><br></br>
+------------------------------------------------------------------------------------------------------------------------------------------
+1.9 Exercise 
+
+<label for="Login">Login:</label><br>
+  <input type="text" id="Login" Login="Login" placeholder="Enter Login detials"><br><br>
+
+<label for="Password">Password:</label><br>
+  <input type="text" id="Password" Password="Password" placeholder="Enter Password"><br><br>
+
+
+<input type ="submit" formaction="file:///C:\JAVA_EXAMPLES/Thank You.html.html">
+
+ 
+  <input type="Reset" value="Reset">
+-----------------------------------------------------------------------------------------------------------------------------------------------
